@@ -1,0 +1,193 @@
+<style>
+.lx-highlight { position: relative; border-radius:3px; padding:1px 2px;}
+.lx-highlight .lx-tooltip {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  background: #333;
+  color: #fff;
+  text-align: left;
+  border-radius: 4px;
+  padding: 6px 8px;
+  position: absolute;
+  z-index: 1000;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  max-width: 240px;
+  white-space: normal;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+.lx-highlight:hover .lx-tooltip { visibility: visible; opacity:1; }
+.lx-animated-wrapper { max-width: 100%; font-family: Arial, sans-serif; }
+.lx-controls {
+  background: #fafafa; border: 1px solid #90caf9; border-radius: 8px;
+  padding: 12px; margin-bottom: 16px;
+}
+.lx-button-row {
+  display: flex; justify-content: center; gap: 8px; margin-bottom: 12px;
+}
+.lx-control-btn {
+  background: #4285f4; color: white; border: none; border-radius: 4px;
+  padding: 8px 16px; cursor: pointer; font-size: 13px; font-weight: 500;
+  transition: background-color 0.2s;
+}
+.lx-control-btn:hover { background: #3367d6; }
+.lx-progress-container {
+  margin-bottom: 8px;
+}
+.lx-progress-slider {
+  width: 100%; margin: 0; appearance: none; height: 6px;
+  background: #ddd; border-radius: 3px; outline: none;
+}
+.lx-progress-slider::-webkit-slider-thumb {
+  appearance: none; width: 18px; height: 18px; background: #4285f4;
+  border-radius: 50%; cursor: pointer;
+}
+.lx-progress-slider::-moz-range-thumb {
+  width: 18px; height: 18px; background: #4285f4; border-radius: 50%;
+  cursor: pointer; border: none;
+}
+.lx-status-text {
+  text-align: center; font-size: 12px; color: #666; margin-top: 4px;
+}
+.lx-text-window {
+  font-family: monospace; white-space: pre-wrap; border: 1px solid #90caf9;
+  padding: 12px; max-height: 260px; overflow-y: auto; margin-bottom: 12px;
+  line-height: 1.6;
+}
+.lx-attributes-panel {
+  background: #fafafa; border: 1px solid #90caf9; border-radius: 6px;
+  padding: 8px 10px; margin-top: 8px; font-size: 13px;
+}
+.lx-current-highlight {
+  border-bottom: 4px solid #ff4444;
+  font-weight: bold;
+  animation: lx-pulse 1s ease-in-out;
+}
+@keyframes lx-pulse {
+  0% { text-decoration-color: #ff4444; }
+  50% { text-decoration-color: #ff0000; }
+  100% { text-decoration-color: #ff4444; }
+}
+.lx-legend {
+  font-size: 12px; margin-bottom: 8px;
+  padding-bottom: 8px; border-bottom: 1px solid #e0e0e0;
+}
+.lx-label {
+  display: inline-block;
+  padding: 2px 4px;
+  border-radius: 3px;
+  margin-right: 4px;
+  color: #000;
+}
+.lx-attr-key {
+  font-weight: 600;
+  color: #1565c0;
+  letter-spacing: 0.3px;
+}
+.lx-attr-value {
+  font-weight: 400;
+  opacity: 0.85;
+  letter-spacing: 0.2px;
+}
+
+/* Add optimizations with larger fonts and better readability for GIFs */
+.lx-gif-optimized .lx-text-window { font-size: 16px; line-height: 1.8; }
+.lx-gif-optimized .lx-attributes-panel { font-size: 15px; }
+.lx-gif-optimized .lx-current-highlight { text-decoration-thickness: 4px; }
+</style>
+    <div class="lx-animated-wrapper lx-gif-optimized">
+      <div class="lx-attributes-panel">
+        <div class="lx-legend">Highlights Legend: <span class="lx-label" style="background-color:#D2E3FC;">action</span> <span class="lx-label" style="background-color:#C8E6C9;">company</span></div>
+        <div id="attributesContainer"></div>
+      </div>
+      <div class="lx-text-window" id="textWindow">
+        A Siri that does way more than just <span class="lx-highlight lx-current-highlight" data-idx="0" style="background-color:#D2E3FC;">setting a timer</span> or <span class="lx-highlight" data-idx="1" style="background-color:#D2E3FC;">writing down a reminder</span> may still be nearly a year away. According to <span class="lx-highlight" data-idx="2" style="background-color:#C8E6C9;">Bloomberg</span>&#x27;s Mark Gurman, <span class="lx-highlight" data-idx="3" style="background-color:#C8E6C9;">Apple</span> plans to <span class="lx-highlight" data-idx="4" style="background-color:#D2E3FC;">release an overhauled version of Siri</span> in the spring, which will be <span class="lx-highlight" data-idx="5" style="background-color:#D2E3FC;">enhanced by the new App Intents feature</span>. Gurman reported that the upgraded Siri will <span class="lx-highlight" data-idx="6" style="background-color:#D2E3FC;">handle more complex tasks</span> within apps, like <span class="lx-highlight" data-idx="7" style="background-color:#D2E3FC;">commenting</span> on an <span class="lx-highlight" data-idx="8" style="background-color:#C8E6C9;">Instagram</span> post, <span class="lx-highlight" data-idx="9" style="background-color:#D2E3FC;">adding an item to your cart in a shopping app</span> or <span class="lx-highlight" data-idx="10" style="background-color:#D2E3FC;">editing a specific photo and sending it afterwards</span>.
+
+After a disappointing delay, <span class="lx-highlight" data-idx="11" style="background-color:#C8E6C9;">Apple</span> is <span class="lx-highlight" data-idx="12" style="background-color:#D2E3FC;">playing catch-up</span> to deliver on previous claims of an improved Siri. According to Gurman, the company is <span class="lx-highlight" data-idx="13" style="background-color:#D2E3FC;">testing App Intents</span> with its own apps, but also third-party apps, including <span class="lx-highlight" data-idx="14" style="background-color:#C8E6C9;">AllTrails</span>, <span class="lx-highlight" data-idx="15" style="background-color:#C8E6C9;">Amazon</span>, <span class="lx-highlight" data-idx="16" style="background-color:#C8E6C9;">Facebook</span>, <span class="lx-highlight" data-idx="17" style="background-color:#C8E6C9;">Threads</span>, <span class="lx-highlight" data-idx="18" style="background-color:#C8E6C9;">Temu</span>, <span class="lx-highlight" data-idx="19" style="background-color:#C8E6C9;">Uber</span>, <span class="lx-highlight" data-idx="20" style="background-color:#C8E6C9;">WhatsApp</span> and <span class="lx-highlight" data-idx="21" style="background-color:#C8E6C9;">YouTube</span>. For apps that handle more sensitive info, like banking apps, Gurman said that <span class="lx-highlight" data-idx="22" style="background-color:#C8E6C9;">Apple</span> may <span class="lx-highlight" data-idx="23" style="background-color:#D2E3FC;">look into certain restrictions</span> or <span class="lx-highlight" data-idx="24" style="background-color:#D2E3FC;">completely avoid these apps for App Intents</span>.
+
+<span class="lx-highlight" data-idx="25" style="background-color:#C8E6C9;">Apple</span> <span class="lx-highlight" data-idx="26" style="background-color:#D2E3FC;">gave us the first glimpse</span> of this smarter Siri during WWDC 2024, where Apple Intelligence <span class="lx-highlight" data-idx="27" style="background-color:#D2E3FC;">was the focus</span> of the annual conference. However, the company <span class="lx-highlight" data-idx="28" style="background-color:#D2E3FC;">delayed the release</span> for the updated Siri in March, explaining that &quot;it&#x27;s going to take us longer than we thought to <span class="lx-highlight" data-idx="29" style="background-color:#D2E3FC;">deliver on these features</span>&quot; and adding that the <span class="lx-highlight" data-idx="30" style="background-color:#D2E3FC;">upgrades be rolled out</span> &quot;in the coming year.&quot; <span class="lx-highlight" data-idx="31" style="background-color:#C8E6C9;">Apple</span> even <span class="lx-highlight" data-idx="32" style="background-color:#D2E3FC;">got sued for false advertising</span> after <span class="lx-highlight" data-idx="33" style="background-color:#D2E3FC;">releasing a TV ad</span> featuring Bella Ramsey that <span class="lx-highlight" data-idx="34" style="background-color:#D2E3FC;">showed off Siri&#x27;s new capabilities</span> that weren&#x27;t available to the public following the <span class="lx-highlight" data-idx="35" style="background-color:#D2E3FC;">release</span> of the iPhone 16.
+      </div>
+      <div class="lx-controls">
+        <div class="lx-button-row">
+          <button class="lx-control-btn" onclick="playPause()">▶️ Play</button>
+          <button class="lx-control-btn" onclick="prevExtraction()">⏮ Previous</button>
+          <button class="lx-control-btn" onclick="nextExtraction()">⏭ Next</button>
+        </div>
+        <div class="lx-progress-container">
+          <input type="range" id="progressSlider" class="lx-progress-slider"
+                 min="0" max="35" value="0"
+                 onchange="jumpToExtraction(this.value)">
+        </div>
+        <div class="lx-status-text">
+          Entity <span id="entityInfo">1/36</span> |
+          Pos <span id="posInfo">[36-51]</span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function() {
+        const extractions = [{"index": 0, "class": "action", "text": "setting a timer", "color": "#D2E3FC", "startPos": 36, "endPos": 51, "beforeText": "A Siri that does way more than just ", "extractionText": "setting a timer", "afterText": " or writing down a reminder may still be nearly a year away. According to Bloomberg&#x27;s Mark Gurman, Apple plans to release an overhauled version of Sir", "attributesHtml": "<div><strong>class:</strong> action</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">type</span>: <span class=\"lx-attr-value\">functionality</span>, <span class=\"lx-attr-key\">context</span>: <span class=\"lx-attr-value\">Siri</span>}</div>"}, {"index": 1, "class": "action", "text": "writing down a reminder", "color": "#D2E3FC", "startPos": 55, "endPos": 78, "beforeText": "A Siri that does way more than just setting a timer or ", "extractionText": "writing down a reminder", "afterText": " may still be nearly a year away. According to Bloomberg&#x27;s Mark Gurman, Apple plans to release an overhauled version of Siri in the spring, which will", "attributesHtml": "<div><strong>class:</strong> action</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">type</span>: <span class=\"lx-attr-value\">functionality</span>, <span class=\"lx-attr-key\">context</span>: <span class=\"lx-attr-value\">Siri</span>}</div>"}, {"index": 2, "class": "company", "text": "Bloomberg", "color": "#C8E6C9", "startPos": 125, "endPos": 134, "beforeText": "A Siri that does way more than just setting a timer or writing down a reminder may still be nearly a year away. According to ", "extractionText": "Bloomberg", "afterText": "&#x27;s Mark Gurman, Apple plans to release an overhauled version of Siri in the spring, which will be enhanced by the new App Intents feature. Gurman repo", "attributesHtml": "<div><strong>class:</strong> company</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">type</span>: <span class=\"lx-attr-value\">media_company</span>}</div>"}, {"index": 3, "class": "company", "text": "Apple", "color": "#C8E6C9", "startPos": 150, "endPos": 155, "beforeText": "A Siri that does way more than just setting a timer or writing down a reminder may still be nearly a year away. According to Bloomberg&#x27;s Mark Gurman, ", "extractionText": "Apple", "afterText": " plans to release an overhauled version of Siri in the spring, which will be enhanced by the new App Intents feature. Gurman reported that the upgrade", "attributesHtml": "<div><strong>class:</strong> company</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">type</span>: <span class=\"lx-attr-value\">technology_company</span>}</div>"}, {"index": 4, "class": "action", "text": "release an overhauled version of Siri", "color": "#D2E3FC", "startPos": 165, "endPos": 202, "beforeText": "s way more than just setting a timer or writing down a reminder may still be nearly a year away. According to Bloomberg&#x27;s Mark Gurman, Apple plans to ", "extractionText": "release an overhauled version of Siri", "afterText": " in the spring, which will be enhanced by the new App Intents feature. Gurman reported that the upgraded Siri will handle more complex tasks within ap", "attributesHtml": "<div><strong>class:</strong> action</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">type</span>: <span class=\"lx-attr-value\">product_launch</span>, <span class=\"lx-attr-key\">timing</span>: <span class=\"lx-attr-value\">in the spring</span>}</div>"}, {"index": 5, "class": "action", "text": "enhanced by the new App Intents feature", "color": "#D2E3FC", "startPos": 232, "endPos": 271, "beforeText": " still be nearly a year away. According to Bloomberg&#x27;s Mark Gurman, Apple plans to release an overhauled version of Siri in the spring, which will be ", "extractionText": "enhanced by the new App Intents feature", "afterText": ". Gurman reported that the upgraded Siri will handle more complex tasks within apps, like commenting on an Instagram post, adding an item to your cart", "attributesHtml": "<div><strong>class:</strong> action</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">type</span>: <span class=\"lx-attr-value\">product_enhancement</span>, <span class=\"lx-attr-key\">context</span>: <span class=\"lx-attr-value\">Siri</span>}</div>"}, {"index": 6, "class": "action", "text": "handle more complex tasks", "color": "#D2E3FC", "startPos": 317, "endPos": 342, "beforeText": "lease an overhauled version of Siri in the spring, which will be enhanced by the new App Intents feature. Gurman reported that the upgraded Siri will ", "extractionText": "handle more complex tasks", "afterText": " within apps, like commenting on an Instagram post, adding an item to your cart in a shopping app or editing a specific photo and sending it afterward", "attributesHtml": "<div><strong>class:</strong> action</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">type</span>: <span class=\"lx-attr-value\">functionality</span>, <span class=\"lx-attr-key\">context</span>: <span class=\"lx-attr-value\">upgraded Siri</span>}</div>"}, {"index": 7, "class": "action", "text": "commenting", "color": "#D2E3FC", "startPos": 361, "endPos": 371, "beforeText": "pring, which will be enhanced by the new App Intents feature. Gurman reported that the upgraded Siri will handle more complex tasks within apps, like ", "extractionText": "commenting", "afterText": " on an Instagram post, adding an item to your cart in a shopping app or editing a specific photo and sending it afterwards.\n\nAfter a disappointing del", "attributesHtml": "<div><strong>class:</strong> action</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">type</span>: <span class=\"lx-attr-value\">functionality</span>, <span class=\"lx-attr-key\">context</span>: <span class=\"lx-attr-value\">on an Instagram post</span>}</div>"}, {"index": 8, "class": "company", "text": "Instagram", "color": "#C8E6C9", "startPos": 378, "endPos": 387, "beforeText": " be enhanced by the new App Intents feature. Gurman reported that the upgraded Siri will handle more complex tasks within apps, like commenting on an ", "extractionText": "Instagram", "afterText": " post, adding an item to your cart in a shopping app or editing a specific photo and sending it afterwards.\n\nAfter a disappointing delay, Apple is pla", "attributesHtml": "<div><strong>class:</strong> company</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">type</span>: <span class=\"lx-attr-value\">social_media_platform</span>}</div>"}, {"index": 9, "class": "action", "text": "adding an item to your cart in a shopping app", "color": "#D2E3FC", "startPos": 394, "endPos": 439, "beforeText": "the new App Intents feature. Gurman reported that the upgraded Siri will handle more complex tasks within apps, like commenting on an Instagram post, ", "extractionText": "adding an item to your cart in a shopping app", "afterText": " or editing a specific photo and sending it afterwards.\n\nAfter a disappointing delay, Apple is playing catch-up to deliver on previous claims of an im", "attributesHtml": "<div><strong>class:</strong> action</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">type</span>: <span class=\"lx-attr-value\">functionality</span>, <span class=\"lx-attr-key\">context</span>: <span class=\"lx-attr-value\">upgraded Siri</span>}</div>"}, {"index": 10, "class": "action", "text": "editing a specific photo and sending it afterwards", "color": "#D2E3FC", "startPos": 443, "endPos": 493, "beforeText": " the upgraded Siri will handle more complex tasks within apps, like commenting on an Instagram post, adding an item to your cart in a shopping app or ", "extractionText": "editing a specific photo and sending it afterwards", "afterText": ".\n\nAfter a disappointing delay, Apple is playing catch-up to deliver on previous claims of an improved Siri. According to Gurman, the company is testi", "attributesHtml": "<div><strong>class:</strong> action</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">type</span>: <span class=\"lx-attr-value\">functionality</span>, <span class=\"lx-attr-key\">context</span>: <span class=\"lx-attr-value\">upgraded Siri</span>}</div>"}, {"index": 11, "class": "company", "text": "Apple", "color": "#C8E6C9", "startPos": 525, "endPos": 530, "beforeText": "an Instagram post, adding an item to your cart in a shopping app or editing a specific photo and sending it afterwards.\n\nAfter a disappointing delay, ", "extractionText": "Apple", "afterText": " is playing catch-up to deliver on previous claims of an improved Siri. According to Gurman, the company is testing App Intents with its own apps, but", "attributesHtml": "<div><strong>class:</strong> company</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">type</span>: <span class=\"lx-attr-value\">technology_company</span>}</div>"}, {"index": 12, "class": "action", "text": "playing catch-up", "color": "#D2E3FC", "startPos": 534, "endPos": 550, "beforeText": "ram post, adding an item to your cart in a shopping app or editing a specific photo and sending it afterwards.\n\nAfter a disappointing delay, Apple is ", "extractionText": "playing catch-up", "afterText": " to deliver on previous claims of an improved Siri. According to Gurman, the company is testing App Intents with its own apps, but also third-party ap", "attributesHtml": "<div><strong>class:</strong> action</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">type</span>: <span class=\"lx-attr-value\">business_strategy</span>, <span class=\"lx-attr-key\">context</span>: <span class=\"lx-attr-value\">to deliver on previous claims of an improved Siri</span>}</div>"}, {"index": 13, "class": "action", "text": "testing App Intents", "color": "#D2E3FC", "startPos": 638, "endPos": 657, "beforeText": "wards.\n\nAfter a disappointing delay, Apple is playing catch-up to deliver on previous claims of an improved Siri. According to Gurman, the company is ", "extractionText": "testing App Intents", "afterText": " with its own apps, but also third-party apps, including AllTrails, Amazon, Facebook, Threads, Temu, Uber, WhatsApp and YouTube. For apps that handle ", "attributesHtml": "<div><strong>class:</strong> action</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">type</span>: <span class=\"lx-attr-value\">development_phase</span>, <span class=\"lx-attr-key\">context</span>: <span class=\"lx-attr-value\">with its own apps, but also third-party apps</span>}</div>"}, {"index": 14, "class": "company", "text": "AllTrails", "color": "#C8E6C9", "startPos": 714, "endPos": 723, "beforeText": " previous claims of an improved Siri. According to Gurman, the company is testing App Intents with its own apps, but also third-party apps, including ", "extractionText": "AllTrails", "afterText": ", Amazon, Facebook, Threads, Temu, Uber, WhatsApp and YouTube. For apps that handle more sensitive info, like banking apps, Gurman said that Apple may", "attributesHtml": "<div><strong>class:</strong> company</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">type</span>: <span class=\"lx-attr-value\">third_party_app</span>}</div>"}, {"index": 15, "class": "company", "text": "Amazon", "color": "#C8E6C9", "startPos": 725, "endPos": 731, "beforeText": "laims of an improved Siri. According to Gurman, the company is testing App Intents with its own apps, but also third-party apps, including AllTrails, ", "extractionText": "Amazon", "afterText": ", Facebook, Threads, Temu, Uber, WhatsApp and YouTube. For apps that handle more sensitive info, like banking apps, Gurman said that Apple may look in", "attributesHtml": "<div><strong>class:</strong> company</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">type</span>: <span class=\"lx-attr-value\">third_party_app</span>}</div>"}, {"index": 16, "class": "company", "text": "Facebook", "color": "#C8E6C9", "startPos": 733, "endPos": 741, "beforeText": " an improved Siri. According to Gurman, the company is testing App Intents with its own apps, but also third-party apps, including AllTrails, Amazon, ", "extractionText": "Facebook", "afterText": ", Threads, Temu, Uber, WhatsApp and YouTube. For apps that handle more sensitive info, like banking apps, Gurman said that Apple may look into certain", "attributesHtml": "<div><strong>class:</strong> company</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">type</span>: <span class=\"lx-attr-value\">third_party_app</span>}</div>"}, {"index": 17, "class": "company", "text": "Threads", "color": "#C8E6C9", "startPos": 743, "endPos": 750, "beforeText": "ed Siri. According to Gurman, the company is testing App Intents with its own apps, but also third-party apps, including AllTrails, Amazon, Facebook, ", "extractionText": "Threads", "afterText": ", Temu, Uber, WhatsApp and YouTube. For apps that handle more sensitive info, like banking apps, Gurman said that Apple may look into certain restrict", "attributesHtml": "<div><strong>class:</strong> company</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">type</span>: <span class=\"lx-attr-value\">third_party_app</span>}</div>"}, {"index": 18, "class": "company", "text": "Temu", "color": "#C8E6C9", "startPos": 752, "endPos": 756, "beforeText": "According to Gurman, the company is testing App Intents with its own apps, but also third-party apps, including AllTrails, Amazon, Facebook, Threads, ", "extractionText": "Temu", "afterText": ", Uber, WhatsApp and YouTube. For apps that handle more sensitive info, like banking apps, Gurman said that Apple may look into certain restrictions o", "attributesHtml": "<div><strong>class:</strong> company</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">type</span>: <span class=\"lx-attr-value\">third_party_app</span>}</div>"}, {"index": 19, "class": "company", "text": "Uber", "color": "#C8E6C9", "startPos": 758, "endPos": 762, "beforeText": "ing to Gurman, the company is testing App Intents with its own apps, but also third-party apps, including AllTrails, Amazon, Facebook, Threads, Temu, ", "extractionText": "Uber", "afterText": ", WhatsApp and YouTube. For apps that handle more sensitive info, like banking apps, Gurman said that Apple may look into certain restrictions or comp", "attributesHtml": "<div><strong>class:</strong> company</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">type</span>: <span class=\"lx-attr-value\">third_party_app</span>}</div>"}, {"index": 20, "class": "company", "text": "WhatsApp", "color": "#C8E6C9", "startPos": 764, "endPos": 772, "beforeText": " Gurman, the company is testing App Intents with its own apps, but also third-party apps, including AllTrails, Amazon, Facebook, Threads, Temu, Uber, ", "extractionText": "WhatsApp", "afterText": " and YouTube. For apps that handle more sensitive info, like banking apps, Gurman said that Apple may look into certain restrictions or completely avo", "attributesHtml": "<div><strong>class:</strong> company</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">type</span>: <span class=\"lx-attr-value\">third_party_app</span>}</div>"}, {"index": 21, "class": "company", "text": "YouTube", "color": "#C8E6C9", "startPos": 777, "endPos": 784, "beforeText": "company is testing App Intents with its own apps, but also third-party apps, including AllTrails, Amazon, Facebook, Threads, Temu, Uber, WhatsApp and ", "extractionText": "YouTube", "afterText": ". For apps that handle more sensitive info, like banking apps, Gurman said that Apple may look into certain restrictions or completely avoid these app", "attributesHtml": "<div><strong>class:</strong> company</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">type</span>: <span class=\"lx-attr-value\">third_party_app</span>}</div>"}, {"index": 22, "class": "company", "text": "Apple", "color": "#C8E6C9", "startPos": 864, "endPos": 869, "beforeText": "AllTrails, Amazon, Facebook, Threads, Temu, Uber, WhatsApp and YouTube. For apps that handle more sensitive info, like banking apps, Gurman said that ", "extractionText": "Apple", "afterText": " may look into certain restrictions or completely avoid these apps for App Intents.\n\nApple gave us the first glimpse of this smarter Siri during WWDC ", "attributesHtml": "<div><strong>class:</strong> company</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">type</span>: <span class=\"lx-attr-value\">technology_company</span>}</div>"}, {"index": 23, "class": "action", "text": "look into certain restrictions", "color": "#D2E3FC", "startPos": 874, "endPos": 904, "beforeText": " Amazon, Facebook, Threads, Temu, Uber, WhatsApp and YouTube. For apps that handle more sensitive info, like banking apps, Gurman said that Apple may ", "extractionText": "look into certain restrictions", "afterText": " or completely avoid these apps for App Intents.\n\nApple gave us the first glimpse of this smarter Siri during WWDC 2024, where Apple Intelligence was ", "attributesHtml": "<div><strong>class:</strong> action</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">type</span>: <span class=\"lx-attr-value\">policy_consideration</span>, <span class=\"lx-attr-key\">context</span>: <span class=\"lx-attr-value\">for App Intents</span>}</div>"}, {"index": 24, "class": "action", "text": "completely avoid these apps for App Intents", "color": "#D2E3FC", "startPos": 908, "endPos": 951, "beforeText": "Uber, WhatsApp and YouTube. For apps that handle more sensitive info, like banking apps, Gurman said that Apple may look into certain restrictions or ", "extractionText": "completely avoid these apps for App Intents", "afterText": ".\n\nApple gave us the first glimpse of this smarter Siri during WWDC 2024, where Apple Intelligence was the focus of the annual conference. However, th", "attributesHtml": "<div><strong>class:</strong> action</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">type</span>: <span class=\"lx-attr-value\">policy_consideration</span>, <span class=\"lx-attr-key\">context</span>: <span class=\"lx-attr-value\">For apps that handle more sensitive info, like banking apps</span>}</div>"}, {"index": 25, "class": "company", "text": "Apple", "color": "#C8E6C9", "startPos": 954, "endPos": 959, "beforeText": "le more sensitive info, like banking apps, Gurman said that Apple may look into certain restrictions or completely avoid these apps for App Intents.\n\n", "extractionText": "Apple", "afterText": " gave us the first glimpse of this smarter Siri during WWDC 2024, where Apple Intelligence was the focus of the annual conference. However, the compan", "attributesHtml": "<div><strong>class:</strong> company</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">type</span>: <span class=\"lx-attr-value\">technology_company</span>}</div>"}, {"index": 26, "class": "action", "text": "gave us the first glimpse", "color": "#D2E3FC", "startPos": 960, "endPos": 985, "beforeText": "e sensitive info, like banking apps, Gurman said that Apple may look into certain restrictions or completely avoid these apps for App Intents.\n\nApple ", "extractionText": "gave us the first glimpse", "afterText": " of this smarter Siri during WWDC 2024, where Apple Intelligence was the focus of the annual conference. However, the company delayed the release for ", "attributesHtml": "<div><strong>class:</strong> action</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">type</span>: <span class=\"lx-attr-value\">announcement</span>, <span class=\"lx-attr-key\">context</span>: <span class=\"lx-attr-value\">smarter Siri</span>, <span class=\"lx-attr-key\">timing</span>: <span class=\"lx-attr-value\">during WWDC 2024</span>}</div>"}, {"index": 27, "class": "action", "text": "was the focus", "color": "#D2E3FC", "startPos": 1050, "endPos": 1063, "beforeText": "ions or completely avoid these apps for App Intents.\n\nApple gave us the first glimpse of this smarter Siri during WWDC 2024, where Apple Intelligence ", "extractionText": "was the focus", "afterText": " of the annual conference. However, the company delayed the release for the updated Siri in March, explaining that &quot;it&#x27;s going to take us longer than ", "attributesHtml": "<div><strong>class:</strong> action</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">type</span>: <span class=\"lx-attr-value\">presentation</span>, <span class=\"lx-attr-key\">context</span>: <span class=\"lx-attr-value\">Apple Intelligence</span>, <span class=\"lx-attr-key\">timing</span>: <span class=\"lx-attr-value\">annual conference</span>}</div>"}, {"index": 28, "class": "action", "text": "delayed the release", "color": "#D2E3FC", "startPos": 1111, "endPos": 1130, "beforeText": "ave us the first glimpse of this smarter Siri during WWDC 2024, where Apple Intelligence was the focus of the annual conference. However, the company ", "extractionText": "delayed the release", "afterText": " for the updated Siri in March, explaining that &quot;it&#x27;s going to take us longer than we thought to deliver on these features&quot; and adding that the upgrad", "attributesHtml": "<div><strong>class:</strong> action</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">type</span>: <span class=\"lx-attr-value\">product_delay</span>, <span class=\"lx-attr-key\">context</span>: <span class=\"lx-attr-value\">updated Siri</span>, <span class=\"lx-attr-key\">timing</span>: <span class=\"lx-attr-value\">in March</span>}</div>"}, {"index": 29, "class": "action", "text": "deliver on these features", "color": "#D2E3FC", "startPos": 1227, "endPos": 1252, "beforeText": " conference. However, the company delayed the release for the updated Siri in March, explaining that &quot;it&#x27;s going to take us longer than we thought to ", "extractionText": "deliver on these features", "afterText": "&quot; and adding that the upgrades be rolled out &quot;in the coming year.&quot; Apple even got sued for false advertising after releasing a TV ad featuring Bella R", "attributesHtml": "<div><strong>class:</strong> action</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">type</span>: <span class=\"lx-attr-value\">development</span>}</div>"}, {"index": 30, "class": "action", "text": "upgrades be rolled out", "color": "#D2E3FC", "startPos": 1274, "endPos": 1296, "beforeText": "elease for the updated Siri in March, explaining that &quot;it&#x27;s going to take us longer than we thought to deliver on these features&quot; and adding that the ", "extractionText": "upgrades be rolled out", "afterText": " &quot;in the coming year.&quot; Apple even got sued for false advertising after releasing a TV ad featuring Bella Ramsey that showed off Siri&#x27;s new capabilitie", "attributesHtml": "<div><strong>class:</strong> action</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">type</span>: <span class=\"lx-attr-value\">deployment</span>, <span class=\"lx-attr-key\">timing</span>: <span class=\"lx-attr-value\">in the coming year</span>}</div>"}, {"index": 31, "class": "company", "text": "Apple", "color": "#C8E6C9", "startPos": 1319, "endPos": 1324, "beforeText": "ing that &quot;it&#x27;s going to take us longer than we thought to deliver on these features&quot; and adding that the upgrades be rolled out &quot;in the coming year.&quot; ", "extractionText": "Apple", "afterText": " even got sued for false advertising after releasing a TV ad featuring Bella Ramsey that showed off Siri&#x27;s new capabilities that weren&#x27;t available to ", "attributesHtml": "<div><strong>class:</strong> company</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">type</span>: <span class=\"lx-attr-value\">technology_company</span>}</div>"}, {"index": 32, "class": "action", "text": "got sued for false advertising", "color": "#D2E3FC", "startPos": 1330, "endPos": 1360, "beforeText": "t&#x27;s going to take us longer than we thought to deliver on these features&quot; and adding that the upgrades be rolled out &quot;in the coming year.&quot; Apple even ", "extractionText": "got sued for false advertising", "afterText": " after releasing a TV ad featuring Bella Ramsey that showed off Siri&#x27;s new capabilities that weren&#x27;t available to the public following the release of ", "attributesHtml": "<div><strong>class:</strong> action</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">type</span>: <span class=\"lx-attr-value\">legal_action</span>, <span class=\"lx-attr-key\">context</span>: <span class=\"lx-attr-value\">TV ad featuring Bella Ramsey</span>}</div>"}, {"index": 33, "class": "action", "text": "releasing a TV ad", "color": "#D2E3FC", "startPos": 1367, "endPos": 1384, "beforeText": "hought to deliver on these features&quot; and adding that the upgrades be rolled out &quot;in the coming year.&quot; Apple even got sued for false advertising after ", "extractionText": "releasing a TV ad", "afterText": " featuring Bella Ramsey that showed off Siri&#x27;s new capabilities that weren&#x27;t available to the public following the release of the iPhone 16.", "attributesHtml": "<div><strong>class:</strong> action</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">type</span>: <span class=\"lx-attr-value\">marketing</span>, <span class=\"lx-attr-key\">context</span>: <span class=\"lx-attr-value\">Siri&#x27;s new capabilities</span>}</div>"}, {"index": 34, "class": "action", "text": "showed off Siri's new capabilities", "color": "#D2E3FC", "startPos": 1413, "endPos": 1447, "beforeText": "g that the upgrades be rolled out &quot;in the coming year.&quot; Apple even got sued for false advertising after releasing a TV ad featuring Bella Ramsey that ", "extractionText": "showed off Siri&#x27;s new capabilities", "afterText": " that weren&#x27;t available to the public following the release of the iPhone 16.", "attributesHtml": "<div><strong>class:</strong> action</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">type</span>: <span class=\"lx-attr-value\">demonstration</span>, <span class=\"lx-attr-key\">context</span>: <span class=\"lx-attr-value\">TV ad</span>}</div>"}, {"index": 35, "class": "action", "text": "release", "color": "#D2E3FC", "startPos": 1499, "endPos": 1506, "beforeText": "advertising after releasing a TV ad featuring Bella Ramsey that showed off Siri&#x27;s new capabilities that weren&#x27;t available to the public following the ", "extractionText": "release", "afterText": " of the iPhone 16.", "attributesHtml": "<div><strong>class:</strong> action</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">type</span>: <span class=\"lx-attr-value\">product_launch</span>, <span class=\"lx-attr-key\">context</span>: <span class=\"lx-attr-value\">iPhone 16</span>}</div>"}];
+        let currentIndex = 0;
+        let isPlaying = false;
+        let animationInterval = null;
+        let animationSpeed = 1.0;
+
+        function updateDisplay() {
+          const extraction = extractions[currentIndex];
+          if (!extraction) return;
+
+          document.getElementById('attributesContainer').innerHTML = extraction.attributesHtml;
+          document.getElementById('entityInfo').textContent = (currentIndex + 1) + '/' + extractions.length;
+          document.getElementById('posInfo').textContent = '[' + extraction.startPos + '-' + extraction.endPos + ']';
+          document.getElementById('progressSlider').value = currentIndex;
+
+          const playBtn = document.querySelector('.lx-control-btn');
+          if (playBtn) playBtn.textContent = isPlaying ? '⏸ Pause' : '▶️ Play';
+
+          const prevHighlight = document.querySelector('.lx-text-window .lx-current-highlight');
+          if (prevHighlight) prevHighlight.classList.remove('lx-current-highlight');
+          const currentSpan = document.querySelector('.lx-text-window span[data-idx="' + currentIndex + '"]');
+          if (currentSpan) {
+            currentSpan.classList.add('lx-current-highlight');
+            currentSpan.scrollIntoView({block: 'center', behavior: 'smooth'});
+          }
+        }
+
+        function nextExtraction() {
+          currentIndex = (currentIndex + 1) % extractions.length;
+          updateDisplay();
+        }
+
+        function prevExtraction() {
+          currentIndex = (currentIndex - 1 + extractions.length) % extractions.length;
+          updateDisplay();
+        }
+
+        function jumpToExtraction(index) {
+          currentIndex = parseInt(index);
+          updateDisplay();
+        }
+
+        function playPause() {
+          if (isPlaying) {
+            clearInterval(animationInterval);
+            isPlaying = false;
+          } else {
+            animationInterval = setInterval(nextExtraction, animationSpeed * 1000);
+            isPlaying = true;
+          }
+          updateDisplay();
+        }
+
+        window.playPause = playPause;
+        window.nextExtraction = nextExtraction;
+        window.prevExtraction = prevExtraction;
+        window.jumpToExtraction = jumpToExtraction;
+
+        updateDisplay();
+      })();
+    </script>

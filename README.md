@@ -9,7 +9,8 @@ Input:
 
 Output:
 
-<img width="1263" height="495" alt="image" src="https://github.com/user-attachments/assets/9d02ffe8-9c5a-4810-99b9-f030d3136bb2" />
+<img width="1632" height="1010" alt="image" src="https://github.com/user-attachments/assets/2971998b-56dc-448d-ba37-32ac87acc049" />
+
 
 
 ## Overview

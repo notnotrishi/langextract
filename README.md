@@ -4,11 +4,12 @@ Implementation of langextract by Google. Extract named entities, custom structur
 
 Input:
 
-<img width="670" height="477" alt="image" src="https://github.com/user-attachments/assets/9b9a6ae4-e7cd-42e7-873f-d960c85a4d66" />
+<img width="736" height="492" alt="image" src="https://github.com/user-attachments/assets/09c73edb-63eb-4c87-b642-672653d8caf4" />
+
 
 Output:
 
-<img width="1265" height="496" alt="image" src="https://github.com/user-attachments/assets/b15a59c1-62da-4d52-b4c4-cff9010e6883" />
+<img width="1263" height="495" alt="image" src="https://github.com/user-attachments/assets/9d02ffe8-9c5a-4810-99b9-f030d3136bb2" />
 
 
 ## Overview
